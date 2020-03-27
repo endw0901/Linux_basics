@@ -72,7 +72,7 @@ chmod a=r aa.txt  // read-onlyのみとなる
 // 無指定は全権限削除(o=でotherの権限すべて削除)
 chmod u+rwx,g-x,o= aa.txt
 
-```|
+```
 
 
 r,w,x
