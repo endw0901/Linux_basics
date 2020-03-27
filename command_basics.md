@@ -20,8 +20,17 @@
 |clear|clears the screen|
 
 ## ls
-* ls -
-long listed command
+* ls -：long listed command
 
-* ls -
-long listed command
+## cat
+* cat xxx.txt ；テキスト内容を表示
+
+## echo
+* echo $PATH：環境変数の内容を表示
+
+## man
+* man ls：lsコマンドのオプション等のマニュアルを確認できる=>spaceでページ送り
+* q：quit マニュアル
+
+## cd
+* cd (no option) ：home directoryに戻る
