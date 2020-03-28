@@ -45,3 +45,11 @@ grep bob /etc/passwd | cut -d: -f1,5 | sort | tr ":" " " | column -t
 
 ```
 
+## 結果が大きいときはpagerへ送る
+
+* lessへredirect
+
+```
+// grepの結果を表示する場合は直接lessが使えない。pipeでlessへredirectする
+grep bin /etc/passwd | less
+```
