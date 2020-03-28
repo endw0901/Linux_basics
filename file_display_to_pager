@@ -1,0 +1,16 @@
+# ファイルをpager表示
+
+* ファイルが大きすぎるとコンテンツの下まで過ぎ去ってしまう
+
+## 例 pagerへpipeでredirectする
+
+```
+// ファイル出力をlessにredirectしてページ送りできるようにする　
+cat /etc/passwd | less
+
+// そのままless でも同じ
+less /etc/passwd
+
+// grepの結果を表示する場合は直接lessが使えない
+grep bin /etc/passwd | less
+```
