@@ -19,7 +19,7 @@ rm -f file
 ```
 ls s*
 rm s*
-
+```
 
 ## コピー
 
@@ -36,7 +36,6 @@ cp -r directoryA directoryB
 
 // 複数directoryコピー A,BをCへ => treeでdirectory構造の結果を検証できる
 cp -r A B C
-
 
 // interactive mode => AをBにコピーするか対話形式で進む
 cp fileA fileB
