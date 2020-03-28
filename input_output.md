@@ -55,12 +55,28 @@ sort < filea
 // sortしたfileをsortfileに書き込む ※redirectの組み合わせ
 sort < filea > sortfile
 
+```
 
+## 出力の出し分け
+
+```
 // fileAのみ存在するとき、Bのみエラーとなる => outCにはfileAのみ出力され、エラーはスクリーン表示される
 ls fileA fileB > outC 
 
 // fileAのみ存在するとき、Bのみエラーとなる => outCにはエラーのみが出力される
 ls fileA fileB 2> outC
+
+// 出力とエラーを別ファイルに書く
+ls fileA fileB 1>out.txt 2>outErr.txt
+
+
+ls fileA fileB > outBoth.txt 2>&1
+```
+* file descriptorを使う時は スペースを入れないこと 2>
+
+### エラーを無視したい
+
+```
+ls fileA fileB 2>/dev/null
 ```
 
-* file descriptorを使う時は スペースを入れないこと 2>
