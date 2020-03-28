@@ -28,3 +28,11 @@ tail -15 file.txt
 // follow the file
 tail -f file
 ```
+
+## fileタイプを表示
+
+* fileコマンド
+
+```Linux Kernel Module
+file fileA
+```
