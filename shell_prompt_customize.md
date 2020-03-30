@@ -31,6 +31,8 @@
 
 ## PS1(プロンプト)の変更
 
+* 多くはPS1環境変数を使う。他のシェルはprompt?など。個別に調べる
+
 ```
 // 現在の設定：[\u@\h \W]\$　→ [ユーザーネーム@ホスト名最初のピリオドまで 現在のworking directoryのbasename] #か$(通常ユーザーは$)
 echo $PS1
@@ -66,6 +68,9 @@ export PATH
 export PS1="[persist \u@\h \w]\$ "
 
 // その後、ssh localhostログイン→promptがログインで上記の設定に変わる
+ssh localhost
+
+// 現在時刻・改行、[ホスト名、working directory basename] #か$(通常ユーザーは$)
 PS1="\t\n[\h \w]\$ "
 
 ```
