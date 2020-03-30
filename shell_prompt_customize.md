@@ -27,7 +27,7 @@
 |\u|現在のユーザー|
 |\w|現在のworking directory(フルパス)|
 |\W|Basename of the 現在のworking directory(パスでなくベースのdirectory名)|
-|\$|有効なUID=0(root user)のときa#、通常ユーザーなら a$|
+|\\$|有効なUID=0(root user)のときa#、通常ユーザーなら a$|
 
 ## PS1(プロンプト)の変更
 
