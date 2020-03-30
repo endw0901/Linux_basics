@@ -3,6 +3,11 @@
 * ショートカット
 * PATH外の操作
 
+## 基本
+* command_basics_cd_ls_cat_echo_man.mdを参照
+* cd (no option) ：home directoryに戻る
+* cd=>pwdでhome directoryのパスがわかる /home/adminuser
+
 ## directory shortcuts
 
 
