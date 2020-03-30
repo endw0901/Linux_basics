@@ -48,3 +48,24 @@ pwd
 PS1="\d \t \h \W>\$ "
 
 ```
+
+
+## .bash_profileの変更
+
+```
+// home directoryに戻る => .bash_profileをvi editor編集
+cd
+vi .bash_profile
+
+// User specific environmentの下に追記
+PATH=$PATH:$HOME/bin
+
+export PATH
+
+# My custome prompt
+export PS1="[persist \u@\h \w]\$ "
+
+// その後、ssh localhostログイン→promptがログインで上記の設定に変わる
+PS1="\t\n[\h \w]\$ "
+
+```
