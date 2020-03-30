@@ -14,6 +14,7 @@
 ### 時間
 
 |コマンド|内容|
+|:------------:|:-----------|
 |\t|HH:MM:SS 現在時刻24h|
 |\T|HH:MM:SS 現在時刻12h|
 |\@|現在時刻 am/pm|
@@ -22,6 +23,7 @@
 ### ユーザー・directory
 
 |コマンド|内容|
+|:------------:|:-----------|
 |\u|現在のユーザー|
 |\w|現在のworking directory(フルパス)|
 |\W|Basename of the 現在のworking directory(パスでなくベースのdirectory名)|
