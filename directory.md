@@ -12,9 +12,11 @@
 |..|the parent directory(親）|
 |cd -|chage to the previous directory（1つ前に戻る）|
 
+
 |コマンド|内容|
-|echo $OLDPWD|1つ前にいたdirectoryを保持する環境変数を表示|
-|cd -|１つ前に戻る（$OLDPWDのdirectoryと同じところ)|
+|:------------:|:-----------|
+|echo $OLDPWD | 1つ前にいたdirectoryを保持する環境変数を表示|
+|cd - | １つ前に戻る（$OLDPWDのdirectoryと同じところ)|
 
 
 ## PATH外のコマンド
