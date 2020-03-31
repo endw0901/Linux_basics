@@ -16,8 +16,8 @@
 // display all processes
 ps -e
 
-// display all processes, full formating
-ps -ef
+// display all processes, full formating pipe less
+ps -ef | less
 
 // display a process tree
 ps -eH
