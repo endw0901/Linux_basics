@@ -63,4 +63,25 @@ date
 unset TZ
 date
 
+// ログイン時にpersistさせるためbashプロフィール編集
+vi .bash_profile
+
+# User specific environment・・・・・・・
+export TZ="US/Pacific"
+
+// 再度ログインしてdate => PDT表示
+exit
+ssh localhost
+echo $TZ
+date
+
+```
+
+## 環境変数がコマンドに与える影響
+
+* TZの設定はdateコマンドに影響する
+
+```
+// dateマニュアルで環境変数TZの記載を確認
+man date | less
 ```
