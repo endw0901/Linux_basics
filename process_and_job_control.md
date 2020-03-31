@@ -66,6 +66,13 @@ htop
 
 ## kill
 
+|コマンド|内容|
+|:------------:|:-----------|
+|kill -l|プロセスに送れるsignalの一覧を表示|
+
+* 9：SIGKILL
+* 15：SIGTERM
+
 ```
 // foregroundプロセスをkill
 ctrl+c
@@ -93,4 +100,38 @@ kill -9 123
 ## job番号
 * [1]2373 ：[1]はjob番号
 
+```
+// 実行中のjob情報(job番号1)
+job %1
 
+jobs
+
+// 現在のプロセス
+%%
+%+
+
+// ひとつ前のプロセス
+%-
+
+// 現在のjob
+jobs %%
+jobs %+
+
+// ひとつ前のjob
+jobs %-
+
+// job番号をjobsで確認し、job番号2をbgからfgに移動する
+jobs
+fg %2
+
+// job番号1をsuspendし、ステータス確認し、bgに移動し、kill
+fg 1
+ctrl + z
+jobs
+bg %1
+jobs
+kill %1
+jobs
+
+
+```
