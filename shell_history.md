@@ -66,3 +66,48 @@ head files.txt sorted_files.txt notes.txt
 * Enter・・実行
 * Arrows・・コマンド変更
 * Ctrl + g・・・検索キャンセル
+
+
+## 例
+
+```
+history
+
+// 指定した番号のコマンド実行(historyで番号が表示される)
+!557
+
+// 保存できる最大数=>もう一回
+echo $HISTSIZE
+!!
+
+// hで始まるコマンド履歴
+!h
+
+// 2つめの引数(b.txt)
+ls a.txt b.txt c.txt
+echo !:2
+
+// 1つ前のlつきコマンド=ls
+ls a.txt b.txt c.txt
+!l
+
+// 1つ前のargumentをecho => c.txt
+echo !$
+
+// !^ = !:1 (1つ前の行の最初のargument
+echo !^
+
+echo aa bb cc
+echo !^
+```
+
+## tab補完の例
+
+* autocompletion(自動補完)
+
+```
+echo aaa.txt bbb.txt nnn.txt
+
+echo aaa.txt bb(tabを押すと補完してくれる
+echo $Hist(tabを押すと $HISTSIZEへ補完
+```
