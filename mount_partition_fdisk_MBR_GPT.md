@@ -44,7 +44,21 @@ unmount /home/
 * gdiskやpartedはfdiskの代替ツール
 
 
-|コマンド|内容|
-|:------------|:-----------|
-|||
-|||
+### fdiskでpartition作成
+
+
+```
+fdisk -l | less
+fdisk /dev/sdb
+
+// Command m for help
+m
+
+// n:add a new partition
+n
+
+// primary or extended partition
+p or enter
+
+// 以下略。interactiveに進めていく。確認はfdisk -l
+```
