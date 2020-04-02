@@ -115,3 +115,15 @@ systemctl isolate poweroff.target
 // コマンドでpower off
 poweroff
 ```
+
+## 例
+
+```
+// 
+ls -F /boot
+cat / etc/inittab
+systemctl get-default
+set-default graphical.target
+systemctl get-default
+systemctl isolate graphical.target
+```
