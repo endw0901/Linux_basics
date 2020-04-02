@@ -167,4 +167,3 @@ https://qiita.com/ritukiii/items/b3d91e97b71ecd41d4ea
 // 逆に標準エラー出力を標準出力にマージする場合
 2>&1
 ```
-このように使
