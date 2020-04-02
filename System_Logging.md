@@ -91,3 +91,80 @@ mail.info -/var/log/mail.info
 mail.warn -/var/log/mail.warn
 mail.err /var/log/mail.err
 ```
+
+## logger
+
+* syslog messagesを生成するコマンド
+* 自分でsyslogを出したいときに使う
+
+### logger option
+* -p ：FACILITY.SEVERITY
+* -t ：TAG
+
+```
+logger -p mail.info -t mailtest "Test."
+sudo tail -l /var/log/mail.log
+```
+
+## logrotate
+
+* logがdisk spaceを使いすぎないよう他に移すとかなどに使う
+
+
+```
+/etc/logrotate.conf:
+include /etc/logrotate.d
+```
+
+### logrotate.confの例
+
+* logrotate -fv /etc/logrotate.conf　・・・・　configをテストしたいとき(-f:full ??, -v:verbose)
+
+```
+// 週次でrotate
+weekly
+
+// 4week保存
+rotate 4
+
+// rotate後に新しい空ファイルを作る
+create
+```
+
+```
+// Ubuntuの設定例(rsyslogの処理) ・・・/etc/logrotate.d/rsyslogのファイル
+/var/log/debug
+/var/log/messages
+{
+    rotate 4
+    weekly
+    missingok
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+      reload rsyslog >/dev/null 2>&1 || true
+    endscript
+}
+```
+* rotate 4 ・・・ログ削除前に4回rotate (?一応調べる)
+* missingok・・・missingログをignore
+* not if empty・・・emptyならrotateしない
+* compress・・・rotateしたlog fileを圧縮
+
+* postrotate ～ endscriptの間は、rotationの後に実行される
+
+https://qiita.com/ritukiii/items/b3d91e97b71ecd41d4ea
+* /dev/nullというのはunixのスペシャルファイルの事で、空ファイルのこと（出力結果を捨てている）
+* >&{ファイルディスクリプタ}・・・・{ファイルディスクリプタ}に結果をマージするという意味
+* 2>&1・・・・標準エラー出力を標準出力にマージする
+
+```
+// 標準出力を標準エラー出力にマージする場合
+
+1>&2
+
+// 逆に標準エラー出力を標準出力にマージする場合
+2>&1
+```
+このように使
