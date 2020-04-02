@@ -49,7 +49,7 @@ id:3:initdefault:
 * initに保持する（一般に）
 
 |コマンド|内容|
-|:------------:|:-----------|
+|:------------|:-----------|
 |0|shut down|
 |1|1, S,s：single user mode for メンテナンス|
 |2|multi-user mode with GUI / Debiun, Ubuntu|
@@ -74,7 +74,7 @@ ls -l runlevel5.target
 ### runlevelsの変更
 
 |コマンド|内容|
-|:------------:|:-----------|
+|:------------|:-----------|
 |telinit RUNLEVEL|runleveの変更|
 |systemctl isolate TARGET|変更したいTARGETを指定|
 
