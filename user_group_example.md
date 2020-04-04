@@ -1,6 +1,6 @@
 # ユーザー・グループ作成例
 
-
+## グループ・ユーザー作成
 ```
 // グループ作成 => GIDは自動採番
 su
@@ -34,6 +34,21 @@ groups bafflec
 // /etc/groupの最後の3行を表示（追加したので)
 tail -3 /etc/group
 
-// 
+```
+
+## グループメンバーリスト情報表示
+
+* /etc/group・・・グループ情報を持つ
 
 ```
+// /etc/groupの最後の3行を表示（追加したので)
+tail -3 /etc/group
+
+// writersに所属userがいない？ccuseはwriterグループに所属していることを確認
+groups ccuse
+
+// writerのGUID 1001を含む行検索
+grep 1001 /etc/passwd
+```
+
+
