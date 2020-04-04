@@ -26,3 +26,37 @@ traceroute -n google.com
 ```
 tracepath -n googl.com
 ```
+
+## netstat
+
+* たくさんのオプションがある
+
+## tcpdump
+
+* パケットのペイロードを確認
+
+* -nオプションは、DSNクエリをスキップして直接数字で処理できる
+
+
+```
+// root権限が必要
+sudo tcpdump
+```
+
+## telnet
+
+* telnetはSSHに取って代わられているが、トラブルシューティングには使われる
+* port connectivityをテスト
+
+```
+telnet google.com 80
+
+// GET HOMEPAGE
+GET /
+
+// プロンプト表示させてquit
+^]
+quit
+```
+
+
