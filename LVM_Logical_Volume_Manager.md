@@ -91,4 +91,70 @@ lvcreate -L 25G -n lv_logs vg_app
 
 * LV PATHはlvdisplayで表示できる
 
+## VGとLVの拡張
+
+### VG拡張
+```
+// 空き確認
+lvmdiskscan
+
+// physical volume追加
+pvcreate /dev/sdc/
+
+// volume groupにphsycal volumeを追加 => vg_appを拡張
+vgextend vg_app /dev/sdc
+
+// 追加した分だけVFreeが増えていることを確認
+vgs
+
+// vgsを、pvごとに確認（pv別の空き容量
+pvs
+```
+
+### LV拡張
+
+```
+// file sysetemのfree spaceを確認
+df -h /data
+
+// lvを5G拡張。-r = resize 、lvのPATH
+// -rがないと、lvは拡張されるが、file systemのsizeは変わらない
+lvextend -L +5G -r /dev/vg_app/lv_data
+lvs
+
+// Available 容量拡張を確認
+df -h /data
+
+resize2fs /dev/vg_app/lv_data
+df -h /data
+```
+
+### mapping
+
+```
+// mapping
+//  =>one FS が複数のLV上に分散されていることが分かる
+lvdisplay -m /dev/vg_app/lv_data
+
+// device確認して、pv作成
+lvmdiskscan
+pvcreate /dev/sdd /dev/sde
+pvs
+
+// pvをvgにアサイン
+vgcreate vg_safe /dev/sdd /dev/sde
+vgs 
+
+// LV作成 mapping (-m 1 = 1copy => 合計で2)、LV名、元のVG
+lvcreate -m 1 -L 5G -n lv_secrets vg_safe
+lvs
+
+// 
+lvs -a
+
+mkfs -t ext4 /dev/vg_safe/lv_secrets
+mkdir /secrets
+mount /dev/vg_safe/lv_secrets /secrets
+df -h /secrets
+```
 
