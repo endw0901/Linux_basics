@@ -129,12 +129,91 @@ chmod 755 script.sh
 
 ```
 
+### if then else
+
+```
+// 編集
+#! /bin/bash
+MY_SHELL="bash"
+
+if [ "$MY_SHELL" = "bash" ]
+then
+  echo "you like the bash shell"
+else
+  echo "not"
+fi
 
 
+// 権限変更　rwx（7）r-x（5）r-x（5）＝ 755
+chmod 755 script.sh
+
+// 実行
+./script.sh
+
+```
 
 
+### ifelifelse  
+
+```
+// 編集
+#! /bin/bash
+MY_SHELL="bash"
+
+if [ "$MY_SHELL" = "bash" ]
+then
+  echo "you like the bash shell"
+elif [ "$MY_SHELL" = "xxx" ]
+then
+  echo "you like the xxx shell"
+else
+  echo "not"
+fi
 
 
+// 権限変更　rwx（7）r-x（5）r-x（5）＝ 755
+chmod 755 script.sh
+
+// 実行
+./script.sh
+
+```
+
+## forloop
+
+* PICTURE IN $PICTURES とか
+
+```
+// 編集
+#! /bin/bash
+MY_SHELL="bash"
+
+for COLOR in red green blue
+do
+  echo "COLOR: $COLOR"
+done
+
+
+// 権限変更　rwx（7）r-x（5）r-x（5）＝ 755
+chmod 755 script.sh
+
+// 実行
+./script.sh
+
+```
+
+
+# 引数の位置
+
+* $N
+ 
+```
+script.sh arg1 arg2 arg3
+```
+
+* $0:script.sh
+* $1:arg1
+* $2:arg2
 
 
 
