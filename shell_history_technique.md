@@ -35,8 +35,37 @@ grep !*
 // grep以下を、root権限で繰り返し
 sudo !!
 
+```
 
 
-
+##　前使ったリソースの繰り返し
 
 ```
+mkdir restore
+
+// 前の行で作ったdirectoryに移動する
+cd !$
+pwd
+
+// ファイル解凍後、元のzipファイルを簡単に削除
+unzip /home/tanaka/Downloads/backup.zip
+
+// backup.zipを削除
+rm !$
+
+```
+
+### 一個前に作ったふぉる削除
+
+```
+mkdir misspel
+rmdir !$
+```
+
+
+
+
+
+
+
+
